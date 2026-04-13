@@ -58,20 +58,24 @@ button {
   display: flex;
   justify-content: center;
   margin: 20px;
+  width: 100%;
 }
 
 .search-box input {
-  width: 80%;
-  max-width: 400px;
-  padding: 12px 15px;
-  border-radius: 25px;
-  border: none;
-  outline: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 70%;
+  max-width: 500px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
   font-size: 16px;
-  transition: 0.3s;
 }
 
-.search-box input:focus {
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+.search-box button {
+  padding: 12px 20px;
+  background: orange;
+  border: none;
+  color: white;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
   }
