@@ -1,14 +1,18 @@
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
   background: black;
   color: white;
   padding: 15px;
   display: flex;
   justify-content: space-between;
+  z-index: 1000;
 }
 
 .navbar a {
@@ -17,48 +21,24 @@ body {
   text-decoration: none;
 }
 
-.hero {
-  text-align: center;
-  margin-top: 100px;
-}
-
 .products {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
-}
-
-.card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  text-align: center;
-}
-
-button {
-  padding: 10px;
-  background: orange;
-  border: none;
-}
-
-.form-box {
-  max-width: 300px;
-  margin: 100px auto;
-  text-align: center;
-  }
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
+  padding: 20px;
 }
 
 .card {
-  width: 150px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: center;
   background: white;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .card img {
@@ -67,7 +47,10 @@ button {
 }
 
 button {
-  background: black;
+  background: linear-gradient(45deg, orange, red);
   color: white;
-  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
   }
