@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Checkout</h1>
+
+<button onclick="orderPlaced()">Place Order</button>
+
+<script>
+function orderPlaced() {
+  alert("Order placed successfully 🎉");
+  localStorage.removeItem("cart");
+}
+</script>
+
+</body>
+    </html>
