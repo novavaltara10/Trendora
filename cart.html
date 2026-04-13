@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Trendora 🛍️</h2>
+  <a href="index.html">Home</a>
+</div>
+
+<h1>Your Cart</h1>
+<div id="cart-items"></div>
+<h2 id="total"></h2>
+
+<a href="checkout.html"><button>Checkout</button></a>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = 0;
+let output = "";
+
+cart.forEach(item => {
+  output += `<p>${item.product} - ₹${item.price}</p>`;
+  total += item.price;
+});
+
+document.getElementById("cart-items").innerHTML = output;
+document.getElementById("total").innerText = "Total: ₹" + total;
+</script>
+
+</body>
+  </html>
