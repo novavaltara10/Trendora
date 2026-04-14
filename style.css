@@ -79,3 +79,16 @@ button {
   border-radius: 0 8px 8px 0;
   cursor: pointer;
   }
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 10px;
+}
+
+.product {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
