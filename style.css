@@ -1,4 +1,4 @@
-body {
+ekbody {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #f5f5f5;
@@ -126,3 +126,62 @@ button {
   background: orange;
   border-radius: 0 5px 5px 0;
 }
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f2f2f2;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #131921;
+  color: white;
+  padding: 10px;
+}
+
+.menu, .cart {
+  font-size: 20px;
+}
+
+/* SEARCH */
+.search-box {
+  padding: 10px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* HERO */
+.hero img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.product {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  }
