@@ -1,9 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: Poppins, sans-serif;
+      margin: 0;
+    }
+
+    .navbar {
+      background: #0f1111;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    h1 {
+      padding: 10px;
+    }
+
+    .cart-item {
+      background: white;
+      margin: 12px;
+      padding: 15px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-item h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .cart-item p {
+      margin: 5px 0;
+      font-weight: bold;
+    }
+
+    .cart-item button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    #total {
+      padding: 10px;
+      font-size: 20px;
+    }
+
+    .checkout-btn {
+      margin: 10px;
+      padding: 12px;
+      width: 90%;
+      background: linear-gradient(to right, orange, red);
+      border: none;
+      color: white;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <h2>Trendora 🛍️</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+  </div>
+</div>
+
 <h1>Your Cart 🛒</h1>
 
-<div id="cart-items" class="cart-box"></div>
+<div id="cart-items"></div>
 <h2 id="total"></h2>
 
-<a href="checkout.html"><button class="checkout-btn">Checkout</button></a>
+<button class="checkout-btn" onclick="placeOrder()">Checkout</button>
 
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -15,8 +103,10 @@ function displayCart() {
   cart.forEach((item, index) => {
     output += `
       <div class="cart-item">
-        <span>${item.name}</span>
-        <span>₹${item.price}</span>
+        <div>
+          <h3>${item.name}</h3>
+          <p>₹${item.price}</p>
+        </div>
         <button onclick="removeItem(${index})">❌</button>
       </div>
     `;
@@ -33,5 +123,14 @@ function removeItem(index) {
   displayCart();
 }
 
+function placeOrder() {
+  alert("Order placed successfully 🎉");
+  localStorage.removeItem("cart");
+  location.reload();
+}
+
 displayCart();
 </script>
+
+</body>
+</html>
