@@ -1,9 +1,9 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(product, price) {
-  cart.push({ product, price });
-  alert(product + " added to cart 🛒");
+function addToCart(name, price) {
+  cart.push({ name, price });
   localStorage.setItem("cart", JSON.stringify(cart));
+  alert(name + " added to cart 🛒");
 }
 
 function searchProduct() {
@@ -19,11 +19,4 @@ function searchProduct() {
       card.style.display = "none";
     }
   });
-}
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-function addToCart(name, price) {
-  cart.push({ name, price });
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Added to cart 🛒");
 }
