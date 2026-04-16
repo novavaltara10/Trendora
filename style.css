@@ -216,3 +216,53 @@ body {
   border-radius: 10px;
   font-size: 16px;
   }
+/* 🔥 SMOOTH ANIMATION */
+* {
+  transition: all 0.3s ease;
+}
+
+/* 🛍️ PRODUCT CARD HOVER */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* 🖱️ BUTTON HOVER */
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* 🔥 NAVBAR STICKY */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 💫 INPUT FOCUS */
+input:focus {
+  outline: none;
+  border: 2px solid orange;
+}
+
+/* 🎯 HERO BUTTON SPECIAL */
+.hero button:hover {
+  background: black;
+  color: white;
+}
+
+/* 💎 CARD ROUNDNESS + SPACING */
+.card {
+  border-radius: 15px;
+}
+
+/* ✨ PAGE FADE IN */
+body {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+  }
