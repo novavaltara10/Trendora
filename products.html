@@ -12,37 +12,20 @@
       background: #f5f5f5;
     }
 
-    /* 🔥 NAVBAR */
     .navbar {
       background: #0f1111;
       color: white;
       padding: 12px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
     }
 
-    .nav-links a {
+    .navbar a {
       color: white;
       margin-left: 10px;
       text-decoration: none;
     }
 
-    /* 🔍 SEARCH */
-    .search-box {
-      display: flex;
-      padding: 10px;
-      background: #232f3e;
-    }
-
-    .search-box input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    /* 🛍️ PRODUCTS */
     .products {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -56,23 +39,15 @@
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
     }
 
-    .card img {
+    img {
       width: 100%;
       border-radius: 10px;
     }
 
-    .card h3 {
-      margin: 8px 0;
-    }
-
-    .card p {
-      font-weight: bold;
-      margin: 5px 0;
-    }
-
-    .card button {
+    button {
       margin-top: 8px;
       padding: 8px;
       width: 100%;
@@ -86,49 +61,42 @@
 
 <body>
 
-<!-- 🔥 NAVBAR -->
 <div class="navbar">
   <h2>Trendora 🛍️</h2>
-  <div class="nav-links">
+  <div>
     <a href="index.html">Home</a>
     <a href="cart.html">Cart</a>
   </div>
 </div>
 
-<!-- 🔍 SEARCH -->
-<div class="search-box">
-  <input type="text" id="search" placeholder="Search products..." onkeyup="searchProduct()">
-</div>
-
-<!-- 🛍️ PRODUCTS -->
 <div class="products">
 
-<div class="card">
+<div class="card" onclick="openProduct('Shoes', 999)">
   <img src="https://via.placeholder.com/200">
   <h3>Shoes</h3>
   <p>₹999</p>
-  <button onclick="addToCart('Shoes', 999)">Add to Cart</button>
+  <button onclick="event.stopPropagation(); addToCart('Shoes',999)">Add to Cart</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="openProduct('Headphones', 1999)">
   <img src="https://via.placeholder.com/200">
   <h3>Headphones</h3>
   <p>₹1999</p>
-  <button onclick="addToCart('Headphones', 1999)">Add to Cart</button>
+  <button onclick="event.stopPropagation(); addToCart('Headphones',1999)">Add to Cart</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="openProduct('Watch', 1499)">
   <img src="https://via.placeholder.com/200">
   <h3>Watch</h3>
   <p>₹1499</p>
-  <button onclick="addToCart('Watch', 1499)">Add to Cart</button>
+  <button onclick="event.stopPropagation(); addToCart('Watch',1499)">Add to Cart</button>
 </div>
 
-<div class="card">
+<div class="card" onclick="openProduct('Bag', 799)">
   <img src="https://via.placeholder.com/200">
   <h3>Bag</h3>
   <p>₹799</p>
-  <button onclick="addToCart('Bag', 799)">Add to Cart</button>
+  <button onclick="event.stopPropagation(); addToCart('Bag',799)">Add to Cart</button>
 </div>
 
 </div>
@@ -142,21 +110,10 @@ function addToCart(name, price) {
   alert(name + " added to cart 🛒");
 }
 
-function searchProduct() {
-  let input = document.getElementById("search").value.toLowerCase();
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
-    let title = card.querySelector("h3").innerText.toLowerCase();
-
-    if (title.includes(input)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
+function openProduct(name, price) {
+  window.location.href = `product-detail.html?name=${name}&price=${price}`;
 }
 </script>
 
 </body>
-</html>
+  </html>
