@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Detail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .navbar {
+      background: #0f1111;
+      color: white;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .product-box {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin: 10px 0;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, orange, red);
+      border: none;
+      color: white;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <h2>Product Details</h2>
+</div>
+
+<div class="container">
+  <div class="product-box">
+    <img id="img">
+    <h2 id="name"></h2>
+    <p class="price" id="price"></p>
+    <p>High quality product 🔥 Best deal available</p>
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+</div>
+
+<script>
+let params = new URLSearchParams(window.location.search);
+
+let name = params.get("name");
+let price = params.get("price");
+
+document.getElementById("name").innerText = name;
+document.getElementById("price").innerText = "₹" + price;
+document.getElementById("img").src = "https://via.placeholder.com/300";
+
+function addToCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ name, price: Number(price) });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(name + " added to cart 🛒");
+}
+</script>
+
+</body>
+  </html>
